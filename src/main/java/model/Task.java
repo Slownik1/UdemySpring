@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table (name = "tasks")
@@ -9,6 +10,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "Desc can not be blank")
     private String description;
     private boolean done;
 
